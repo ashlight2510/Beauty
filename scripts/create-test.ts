@@ -77,7 +77,7 @@ if (fs.existsSync(generatePath)) {
   let generateContent = fs.readFileSync(generatePath, 'utf-8');
   
   // KNOWN_TESTS 배열에 새 테스트 추가
-  const knownTestsPattern = /const KNOWN_TESTS = \[(.*?)\];/s;
+  const knownTestsPattern = /const KNOWN_TESTS = \[([\s\S]*?)\];/;
   const match = generateContent.match(knownTestsPattern);
   if (match) {
     const existingTests = match[1]
