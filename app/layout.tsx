@@ -1,0 +1,26 @@
+import type { Metadata } from 'next'
+import './globals.css'
+
+export const metadata: Metadata = {
+  title: '꾸밈비 파산 위험도 테스트 | Beauty Bankruptcy Test',
+  description: '당신의 뷰티 지출 패턴을 분석하고 파산 위험도를 측정해보세요! 재미있는 테스트로 알아보는 나의 꾸밈비 현실 체크.',
+  keywords: '꾸밈비, 파산 테스트, 뷰티 지출, 화장품 지출, 뷰티 테스트',
+  openGraph: {
+    title: '꾸밈비 파산 위험도 테스트',
+    description: '당신의 뷰티 지출 패턴을 분석하고 파산 위험도를 측정해보세요!',
+    type: 'website',
+  },
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <html lang="ko">
+      <body>{children}</body>
+    </html>
+  )
+}
+
