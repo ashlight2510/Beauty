@@ -21,7 +21,7 @@ export function getTestConfig(testId: string): TestConfig {
   }
 }
 
-// 모든 테스트 목록 (하드코딩 대신 동적으로 관리)
+// 모든 테스트 목록 (하드코딩 대신 동적으로 관리) 
 // 새 테스트 추가 시 여기에 추가하거나, 빌드 스크립트로 자동 업데이트 가능
 const KNOWN_TESTS = ['beauty-bankruptcy'];
 
