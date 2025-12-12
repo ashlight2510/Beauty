@@ -8,11 +8,14 @@ import { AdComponent } from '@/lib/ads';
 import { TestConfig, TestResult } from '@/lib/types';
 import { getTestConfig } from '@/lib/generate';
 import { convertAnswersToValues, calculate, formatWon } from '@/lib/scoring';
+import { MORE_TESTS_URL } from '@/lib/constants';
 
 function ResultContent({ testId }: { testId: string }) {
   const searchParams = useSearchParams();
   const [config, setConfig] = useState<TestConfig | null>(null);
   const [result, setResult] = useState<TestResult | null>(null);
+  const actionButtonClass =
+    'w-full sm:flex-1 inline-flex items-center justify-center font-bold py-4 px-8 rounded-full text-center min-h-[56px] transition-colors';
 
   useEffect(() => {
     try {
@@ -131,16 +134,24 @@ function ResultContent({ testId }: { testId: string }) {
                 alert('링크가 복사되었습니다!');
               }
             }}
-            className="bg-blue-500 text-white font-bold py-4 px-8 rounded-full hover:bg-blue-600 transition-colors shadow-lg"
+            className={`${actionButtonClass} bg-blue-500 text-white shadow-lg hover:bg-blue-600`}
           >
             📤 결과 공유하기
           </button>
           <Link
             href={`/${testId}`}
-            className="bg-gray-200 text-gray-700 font-bold py-4 px-8 rounded-full hover:bg-gray-300 transition-colors text-center"
+            className={`${actionButtonClass} bg-gray-200 text-gray-700 hover:bg-gray-300`}
           >
             🔄 다시 테스트하기
           </Link>
+          <a
+            href={MORE_TESTS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`${actionButtonClass} bg-white border border-pink-100 text-pink-600 shadow hover:bg-pink-50 hover:border-pink-200`}
+          >
+            ✨ 다른 테스트 해보기
+          </a>
         </div>
 
         {/* 광고 영역 */}
@@ -166,4 +177,3 @@ export default function ResultClient({ testId }: { testId: string }) {
     </Suspense>
   );
 }
-

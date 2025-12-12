@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { TestConfig } from '@/lib/types';
 import { getTestConfig } from '@/lib/generate';
+import { MORE_TESTS_URL } from '@/lib/constants';
 
 export default function TestIntroClient({ testId }: { testId: string }) {
   const [config, setConfig] = useState<TestConfig | null>(null);
@@ -53,12 +54,22 @@ export default function TestIntroClient({ testId }: { testId: string }) {
           )}
         </div>
 
-        <Link
-          href={`/${testId}/test`}
-          className="inline-block bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white text-xl font-bold py-4 px-12 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200"
-        >
-          테스트 시작하기 →
-        </Link>
+        <div className="flex flex-col md:flex-row items-center justify-center gap-3">
+          <Link
+            href={`/${testId}/test`}
+            className="inline-flex items-center justify-center bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 text-white text-xl font-bold py-4 px-12 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 min-h-[56px]"
+          >
+            테스트 시작하기 →
+          </Link>
+          <a
+            href={MORE_TESTS_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center bg-white text-pink-600 text-lg font-semibold py-4 px-10 rounded-full border border-pink-100 shadow hover:bg-pink-50 hover:border-pink-200 transition-all duration-200 min-h-[56px]"
+          >
+            다른 테스트 해보기
+          </a>
+        </div>
 
         <div className="mt-12 text-sm text-gray-400">
           <p>⚠️ 결과는 재미로만 참고하세요!</p>
@@ -67,4 +78,3 @@ export default function TestIntroClient({ testId }: { testId: string }) {
     </main>
   );
 }
-
