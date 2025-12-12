@@ -35,10 +35,10 @@
   <g fill="#0f172a" opacity=".12">
     <path d="M960 120c60 0 110 50 110 110s-50 110-110 110-110-50-110-110 50-110 110-110z"/>
   </g>
-  <g fill="#f8fafc" text-anchor="start" font-family="Inter, 'Noto Sans KR', 'Apple SD Gothic Neo', system-ui, -apple-system, sans-serif">
-    <text x="420" y="250" font-size="52" font-weight="700" opacity=".95">꾸밈비 파산 위험도 테스트</text>
-    <text x="420" y="315" font-size="70" font-weight="800">Beauty Bankruptcy Test</text>
-    <text x="420" y="378" font-size="30" font-weight="600" opacity=".92">뷰티 지출 패턴을 점검하고 위험도를 확인하세요</text>
-    <text x="420" y="430" font-size="26" font-weight="500" opacity=".88">11개의 질문으로 나의 꾸밈비 습관을 진단하고 친구들과 공유!</text>
+  <g fill="#f8fafc" text-anchor="start" font-family="Inter, 'Noto Sans', system-ui, -apple-system, sans-serif">
+    <text x="420" y="250" font-size="52" font-weight="700" opacity=".95">Beauty Budget Risk Check</text>
+    <text x="420" y="315" font-size="70" font-weight="800">Beauty Test</text>
+    <text x="420" y="378" font-size="30" font-weight="600" opacity=".92">Measure your beauty spend pattern and risk</text>
+    <text x="420" y="430" font-size="26" font-weight="500" opacity=".88">11 quick questions to spot habits and share</text>
   </g>
 </svg>

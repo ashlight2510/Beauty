@@ -20,7 +20,7 @@ export const metadata: Metadata = {
         url: ogImage,
         width: 1200,
         height: 630,
-        alt: '꾸밈비 파산 위험도 테스트 미리보기',
+        alt: 'Beauty Test preview',
       },
     ],
   },
