@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import Script from 'next/script'
 
 const siteUrl = 'https://beauty.funnyfunny.cloud'
 const ogImage = '/og-image.png'
@@ -50,7 +51,21 @@ export default function RootLayout({
           crossOrigin="anonymous"
         ></script>
       </head>
-      <body>{children}</body>
+      <body>
+      <div className="adsense-block" style={{ margin: '16px 0', textAlign: 'center' }}>
+        <ins
+          className="adsbygoogle"
+          style={{ display: 'block' }}
+          data-ad-format="fluid"
+          data-ad-layout-key="-6t+ed+2i-1n-4w"
+          data-ad-client="ca-pub-1204894220949193"
+          data-ad-slot="7300458753"
+        ></ins>
+      </div>
+      <Script id="adsbygoogle-init" strategy="afterInteractive">
+        {`(adsbygoogle = window.adsbygoogle || []).push({});`}
+      </Script>
+{children}</body>
     </html>
   )
 }
