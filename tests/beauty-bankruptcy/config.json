@@ -13,124 +13,135 @@
     {
       "id": "income",
       "title": "Q1. 월 소득 / 용돈 (월급)",
+      "titleEn": "Q1. Monthly Income / Allowance (Salary)",
       "choices": [
-        { "label": "0~50만원", "value": 25 },
-        { "label": "50~100만원", "value": 75 },
-        { "label": "100~200만원", "value": 150 },
-        { "label": "200~300만원", "value": 250 },
-        { "label": "300~500만원", "value": 400 },
-        { "label": "500만원 이상", "value": 750 }
+        { "label": "0~50만원", "labelEn": "0~500K KRW", "value": 25 },
+        { "label": "50~100만원", "labelEn": "500K~1M KRW", "value": 75 },
+        { "label": "100~200만원", "labelEn": "1M~2M KRW", "value": 150 },
+        { "label": "200~300만원", "labelEn": "2M~3M KRW", "value": 250 },
+        { "label": "300~500만원", "labelEn": "3M~5M KRW", "value": 400 },
+        { "label": "500만원 이상", "labelEn": "5M+ KRW", "value": 750 }
       ]
     },
     {
       "id": "totalBeauty",
       "title": "Q2. 한 달 총 꾸밈비 (화장품+피부관리+헤어+네일+패션)",
+      "titleEn": "Q2. Total Monthly Beauty Spending (Cosmetics+Skincare+Hair+Nail+Fashion)",
       "choices": [
-        { "label": "0~5만원", "value": 2.5 },
-        { "label": "5~10만원", "value": 7.5 },
-        { "label": "10~20만원", "value": 15 },
-        { "label": "20~40만원", "value": 30 },
-        { "label": "40~70만원", "value": 55 },
-        { "label": "70~100만원", "value": 85 },
-        { "label": "100만원 이상", "value": 150 }
+        { "label": "0~5만원", "labelEn": "0~50K KRW", "value": 2.5 },
+        { "label": "5~10만원", "labelEn": "50K~100K KRW", "value": 7.5 },
+        { "label": "10~20만원", "labelEn": "100K~200K KRW", "value": 15 },
+        { "label": "20~40만원", "labelEn": "200K~400K KRW", "value": 30 },
+        { "label": "40~70만원", "labelEn": "400K~700K KRW", "value": 55 },
+        { "label": "70~100만원", "labelEn": "700K~1M KRW", "value": 85 },
+        { "label": "100만원 이상", "labelEn": "1M+ KRW", "value": 150 }
       ]
     },
     {
       "id": "makeup",
       "title": "Q3. 화장품(메이크업) 지출",
+      "titleEn": "Q3. Makeup Spending",
       "choices": [
-        { "label": "0~3만원", "value": 1.5 },
-        { "label": "3~7만원", "value": 5 },
-        { "label": "7~15만원", "value": 11 },
-        { "label": "15~30만원", "value": 22.5 },
-        { "label": "30만원 이상", "value": 50 }
+        { "label": "0~3만원", "labelEn": "0~30K KRW", "value": 1.5 },
+        { "label": "3~7만원", "labelEn": "30K~70K KRW", "value": 5 },
+        { "label": "7~15만원", "labelEn": "70K~150K KRW", "value": 11 },
+        { "label": "15~30만원", "labelEn": "150K~300K KRW", "value": 22.5 },
+        { "label": "30만원 이상", "labelEn": "300K+ KRW", "value": 50 }
       ]
     },
     {
       "id": "skincare",
       "title": "Q4. 스킨케어 지출",
+      "titleEn": "Q4. Skincare Spending",
       "choices": [
-        { "label": "0~2만원", "value": 1 },
-        { "label": "2~5만원", "value": 3.5 },
-        { "label": "5~10만원", "value": 7.5 },
-        { "label": "10~20만원", "value": 15 },
-        { "label": "20만원 이상", "value": 35 }
+        { "label": "0~2만원", "labelEn": "0~20K KRW", "value": 1 },
+        { "label": "2~5만원", "labelEn": "20K~50K KRW", "value": 3.5 },
+        { "label": "5~10만원", "labelEn": "50K~100K KRW", "value": 7.5 },
+        { "label": "10~20만원", "labelEn": "100K~200K KRW", "value": 15 },
+        { "label": "20만원 이상", "labelEn": "200K+ KRW", "value": 35 }
       ]
     },
     {
       "id": "nailHair",
       "title": "Q5. 네일/헤어 관리 주기",
+      "titleEn": "Q5. Nail/Hair Care Frequency",
       "choices": [
-        { "label": "안 함", "value": 0 },
-        { "label": "월 1회", "value": 1 },
-        { "label": "월 2회", "value": 2 },
-        { "label": "월 3회 이상", "value": 4 }
+        { "label": "안 함", "labelEn": "None", "value": 0 },
+        { "label": "월 1회", "labelEn": "Once a month", "value": 1 },
+        { "label": "월 2회", "labelEn": "Twice a month", "value": 2 },
+        { "label": "월 3회 이상", "labelEn": "3+ times a month", "value": 4 }
       ]
     },
     {
       "id": "fashion",
       "title": "Q6. 패션 쇼핑 빈도",
+      "titleEn": "Q6. Fashion Shopping Frequency",
       "choices": [
-        { "label": "거의 안 함", "value": 0.5 },
-        { "label": "월 1번", "value": 1 },
-        { "label": "월 2~3번", "value": 2.5 },
-        { "label": "주 1~2번", "value": 6 },
-        { "label": "거의 매일 \"미리보기\" 탐색함", "value": 20 }
+        { "label": "거의 안 함", "labelEn": "Almost never", "value": 0.5 },
+        { "label": "월 1번", "labelEn": "Once a month", "value": 1 },
+        { "label": "월 2~3번", "labelEn": "2~3 times a month", "value": 2.5 },
+        { "label": "주 1~2번", "labelEn": "1~2 times a week", "value": 6 },
+        { "label": "거의 매일 \"미리보기\" 탐색함", "labelEn": "Almost daily \"preview\" browsing", "value": 20 }
       ]
     },
     {
       "id": "instagram",
       "title": "Q7. 하루 인스타(뷰티 관련)",
+      "titleEn": "Q7. Daily Instagram (Beauty Related)",
       "choices": [
-        { "label": "0~30분", "value": 0.25 },
-        { "label": "30~60분", "value": 0.75 },
-        { "label": "1~2시간", "value": 1.5 },
-        { "label": "2~4시간", "value": 3 },
-        { "label": "4시간 이상", "value": 5 }
+        { "label": "0~30분", "labelEn": "0~30 minutes", "value": 0.25 },
+        { "label": "30~60분", "labelEn": "30~60 minutes", "value": 0.75 },
+        { "label": "1~2시간", "labelEn": "1~2 hours", "value": 1.5 },
+        { "label": "2~4시간", "labelEn": "2~4 hours", "value": 3 },
+        { "label": "4시간 이상", "labelEn": "4+ hours", "value": 5 }
       ]
     },
     {
       "id": "shoppingApp",
       "title": "Q8. 쇼핑앱 보는 시간",
+      "titleEn": "Q8. Time Spent on Shopping Apps",
       "choices": [
-        { "label": "안 봄", "value": 0 },
-        { "label": "10~20분", "value": 0.25 },
-        { "label": "30~60분", "value": 0.75 },
-        { "label": "1~2시간", "value": 1.5 },
-        { "label": "2시간 이상", "value": 3 }
+        { "label": "안 봄", "labelEn": "Don't look", "value": 0 },
+        { "label": "10~20분", "labelEn": "10~20 minutes", "value": 0.25 },
+        { "label": "30~60분", "labelEn": "30~60 minutes", "value": 0.75 },
+        { "label": "1~2시간", "labelEn": "1~2 hours", "value": 1.5 },
+        { "label": "2시간 이상", "labelEn": "2+ hours", "value": 3 }
       ]
     },
     {
       "id": "sale",
       "title": "Q9. 세일 보면 반응",
+      "titleEn": "Q9. Reaction to Sales",
       "choices": [
-        { "label": "\"침착함 유지 가능\"", "value": 1 },
-        { "label": "\"그래도 안 삼\"", "value": 2 },
-        { "label": "\"일단 장바구니에 넣음\"", "value": 4 },
-        { "label": "\"세일은 운명\"", "value": 6 },
-        { "label": "\"사야 절약임\"", "value": 8 },
-        { "label": "\"본능 OFF / 결제 ON\"", "value": 10 }
+        { "label": "\"침착함 유지 가능\"", "labelEn": "\"Can stay calm\"", "value": 1 },
+        { "label": "\"그래도 안 삼\"", "labelEn": "\"Still won't buy\"", "value": 2 },
+        { "label": "\"일단 장바구니에 넣음\"", "labelEn": "\"Add to cart first\"", "value": 4 },
+        { "label": "\"세일은 운명\"", "labelEn": "\"Sales are destiny\"", "value": 6 },
+        { "label": "\"사야 절약임\"", "labelEn": "\"Buying is saving\"", "value": 8 },
+        { "label": "\"본능 OFF / 결제 ON\"", "labelEn": "\"Instinct OFF / Payment ON\"", "value": 10 }
       ]
     },
     {
       "id": "unopened",
       "title": "Q10. 안 뜯은 화장품 개수",
+      "titleEn": "Q10. Number of Unopened Cosmetics",
       "choices": [
-        { "label": "0개", "value": 0 },
-        { "label": "1~3개", "value": 2 },
-        { "label": "4~7개", "value": 5.5 },
-        { "label": "8~15개", "value": 11.5 },
-        { "label": "15개 이상", "value": 20 }
+        { "label": "0개", "labelEn": "0 items", "value": 0 },
+        { "label": "1~3개", "labelEn": "1~3 items", "value": 2 },
+        { "label": "4~7개", "labelEn": "4~7 items", "value": 5.5 },
+        { "label": "8~15개", "labelEn": "8~15 items", "value": 11.5 },
+        { "label": "15개 이상", "labelEn": "15+ items", "value": 20 }
       ]
     },
     {
       "id": "justification",
       "title": "Q11. \"이건 투자야\" 자기합리화 빈도",
+      "titleEn": "Q11. \"This is an investment\" Self-Justification Frequency",
       "choices": [
-        { "label": "없음", "value": 0 },
-        { "label": "가끔", "value": 2 },
-        { "label": "자주", "value": 5 },
-        { "label": "매번", "value": 10 }
+        { "label": "없음", "labelEn": "None", "value": 0 },
+        { "label": "가끔", "labelEn": "Sometimes", "value": 2 },
+        { "label": "자주", "labelEn": "Often", "value": 5 },
+        { "label": "매번", "labelEn": "Every time", "value": 10 }
       ]
     }
   ],

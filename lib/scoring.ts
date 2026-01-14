@@ -59,35 +59,35 @@ export function calculateBeautyRisk(answers: Answers): number {
 }
 
 // 위험도 등급 반환
-export function getRiskGrade(riskScore: number): RiskGrade {
+export function getRiskGrade(riskScore: number, lang: 'ko' | 'en' = 'ko'): RiskGrade {
   if (riskScore <= 15) {
     return {
-      grade: '무소속 미니멀리스트',
-      description: '당신은 뷰티 소비의 달인! 절제력이 뛰어나시네요.',
+      grade: lang === 'en' ? 'Minimalist' : '무소속 미니멀리스트',
+      description: lang === 'en' ? 'You are a master of beauty spending! Excellent self-control.' : '당신은 뷰티 소비의 달인! 절제력이 뛰어나시네요.',
       color: 'text-green-600',
     };
   } else if (riskScore <= 35) {
     return {
-      grade: '꾸밈비 안정군',
-      description: '적당한 선에서 즐기시는 현명한 소비자입니다.',
+      grade: lang === 'en' ? 'Stable Beauty Spender' : '꾸밈비 안정군',
+      description: lang === 'en' ? 'You are a wise consumer who enjoys within reasonable limits.' : '적당한 선에서 즐기시는 현명한 소비자입니다.',
       color: 'text-blue-600',
     };
   } else if (riskScore <= 55) {
     return {
-      grade: '주의군',
-      description: '조금만 더 신중하게 결정하시면 좋을 것 같아요.',
+      grade: lang === 'en' ? 'Caution Zone' : '주의군',
+      description: lang === 'en' ? 'It would be good to make decisions a bit more carefully.' : '조금만 더 신중하게 결정하시면 좋을 것 같아요.',
       color: 'text-yellow-600',
     };
   } else if (riskScore <= 75) {
     return {
-      grade: '고위험군',
-      description: '통장이 조금씩 울고 있어요. 한 번 점검해볼까요?',
+      grade: lang === 'en' ? 'High Risk Zone' : '고위험군',
+      description: lang === 'en' ? 'Your wallet is crying a little. Shall we check it?' : '통장이 조금씩 울고 있어요. 한 번 점검해볼까요?',
       color: 'text-orange-600',
     };
   } else {
     return {
-      grade: '파산 확정 💸',
-      description: '화장대에 난민촌이 생길 예정입니다. 지금 멈추세요!',
+      grade: lang === 'en' ? 'Bankruptcy Confirmed 💸' : '파산 확정 💸',
+      description: lang === 'en' ? 'A refugee camp will form on your vanity. Stop now!' : '화장대에 난민촌이 생길 예정입니다. 지금 멈추세요!',
       color: 'text-red-600',
     };
   }

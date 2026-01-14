@@ -46,7 +46,8 @@ function ResultContent({ testId }: { testId: string }) {
       const testResult = calculate(
         testConfig.scoringMethod,
         answers,
-        testConfig.resultMessages
+        currentLang === 'en' ? ((testConfig as any).resultMessagesEn || testConfig.resultMessages) : testConfig.resultMessages,
+        currentLang
       );
 
       setResult(testResult);
