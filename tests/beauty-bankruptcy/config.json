@@ -1,9 +1,12 @@
 {
   "id": "beauty-bankruptcy",
   "title": "꾸밈비 파산 위험도 테스트",
+  "titleEn": "Beauty Bankruptcy Risk Test",
   "subtitle": "Beauty Bankruptcy Test",
   "description": "당신의 뷰티 지출 패턴을 분석하고 파산 위험도를 측정해보세요!",
+  "descriptionEn": "Analyze your beauty spending patterns and measure your bankruptcy risk!",
   "subDescription": "총 11개의 질문으로 알아보는 나의 꾸밈비 현실 체크 💸",
+  "subDescriptionEn": "Check my beauty spending reality with 11 questions 💸",
   "scoringMethod": "beauty_default",
   "shareImage": "/og-image.png",
   "questions": [

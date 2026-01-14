@@ -134,7 +134,19 @@ export function calculateFiveYearSpending(answers: Answers): number {
 }
 
 // 숫자를 원화 형식으로 포맷팅
-export function formatWon(amount: number): string {
+export function formatWon(amount: number, lang: 'ko' | 'en' = 'ko'): string {
+  if (lang === 'en') {
+    // 영어일 때는 간단한 형식
+    if (amount >= 100000000) {
+      return `₩${(amount / 100000000).toFixed(1)}억`;
+    } else if (amount >= 10000) {
+      return `₩${(amount / 10000).toFixed(0)}만`;
+    }
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'KRW',
+    }).format(amount);
+  }
   return new Intl.NumberFormat('ko-KR', {
     style: 'currency',
     currency: 'KRW',

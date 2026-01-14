@@ -6,14 +6,18 @@ import ProgressBar from '@/components/ProgressBar';
 import QuestionCard from '@/components/QuestionCard';
 import { TestConfig } from '@/lib/types';
 import { getTestConfig } from '@/lib/generate';
+import { Language, detectLang, t } from '@/lib/i18n';
+import LangSwitch from '@/components/LangSwitch';
 
 export default function TestClient({ testId }: { testId: string }) {
   const router = useRouter();
   const [config, setConfig] = useState<TestConfig | null>(null);
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<Record<string, string>>({});
+  const [currentLang, setCurrentLang] = useState<Language>('ko');
 
   useEffect(() => {
+    setCurrentLang(detectLang());
     try {
       const testConfig = getTestConfig(testId);
       setConfig(testConfig);
@@ -47,23 +51,27 @@ export default function TestClient({ testId }: { testId: string }) {
       <main className="min-h-screen flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-pink-500 mx-auto"></div>
-          <p className="mt-4 text-gray-600">로딩 중...</p>
+          <p className="mt-4 text-gray-600">{t('loading', currentLang)}</p>
         </div>
       </main>
     );
   }
 
   const currentQ = config.questions[currentQuestion];
-  const choices = currentQ.choices.map((c) => c.label);
+  const questionTitle = currentLang === 'en' ? ((currentQ as any).titleEn || currentQ.title) : currentQ.title;
+  const choices = currentQ.choices.map((c) => {
+    return currentLang === 'en' ? ((c as any).labelEn || c.label) : c.label;
+  });
 
   return (
     <main className="min-h-screen flex flex-col items-center justify-center px-4 py-8">
+      <LangSwitch currentLang={currentLang} onLangChange={setCurrentLang} />
       <div className="max-w-2xl w-full">
         <ProgressBar current={currentQuestion + 1} total={config.questions.length} />
         
         <div className="bg-white rounded-3xl p-6 md:p-10 shadow-2xl">
           <QuestionCard
-            question={currentQ.title}
+            question={questionTitle}
             choices={choices}
             selectedValue={answers[currentQ.id]}
             onSelect={handleSelect}
@@ -75,7 +83,7 @@ export default function TestClient({ testId }: { testId: string }) {
             onClick={() => setCurrentQuestion(currentQuestion - 1)}
             className="mt-6 text-gray-500 hover:text-gray-700 transition-colors"
           >
-            ← 이전 질문
+            {t('previousQuestion', currentLang)}
           </button>
         )}
       </div>
