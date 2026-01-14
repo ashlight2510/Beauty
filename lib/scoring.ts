@@ -157,7 +157,8 @@ export function formatWon(amount: number, lang: 'ko' | 'en' = 'ko'): string {
 export function calculate(
   scoringMethod: string,
   answers: Answers,
-  resultMessages?: string[]
+  resultMessages?: string[],
+  lang: 'ko' | 'en' = 'ko'
 ): TestResult {
   let riskScore: number;
   
@@ -168,7 +169,7 @@ export function calculate(
     riskScore = 50;
   }
   
-  const grade = getRiskGrade(riskScore);
+  const grade = getRiskGrade(riskScore, lang);
   const percentile = calculatePercentile(riskScore);
   const stockpile = calculateStockpile(answers);
   const fiveYear = calculateFiveYearSpending(answers);

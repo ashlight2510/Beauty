@@ -22,13 +22,23 @@ function ResultContent({ testId }: { testId: string }) {
 
   useEffect(() => {
     setCurrentLang(detectLang());
-    try {
-      const testConfig = getTestConfig(testId);
-      setConfig(testConfig);
+  }, []);
 
+  useEffect(() => {
+    if (!config) {
+      try {
+        const testConfig = getTestConfig(testId);
+        setConfig(testConfig);
+      } catch (error) {
+        console.error('Failed to load test config:', error);
+      }
+      return;
+    }
+
+    try {
       // URL 파라미터에서 답변 가져오기
       const choices: Record<string, string> = {};
-      testConfig.questions.forEach((q) => {
+      config.questions.forEach((q) => {
         const value = searchParams.get(q.id);
         if (value) choices[q.id] = value;
       });
@@ -40,21 +50,21 @@ function ResultContent({ testId }: { testId: string }) {
       }
 
       // 답변을 숫자 값으로 변환
-      const answers = convertAnswersToValues(choices, testConfig.questions);
+      const answers = convertAnswersToValues(choices, config.questions);
 
       // 계산 수행
       const testResult = calculate(
-        testConfig.scoringMethod,
+        config.scoringMethod,
         answers,
-        currentLang === 'en' ? ((testConfig as any).resultMessagesEn || testConfig.resultMessages) : testConfig.resultMessages,
+        currentLang === 'en' ? ((config as any).resultMessagesEn || config.resultMessages) : config.resultMessages,
         currentLang
       );
 
       setResult(testResult);
     } catch (error) {
-      console.error('Failed to load test config or calculate result:', error);
+      console.error('Failed to calculate result:', error);
     }
-  }, [searchParams, testId]);
+  }, [searchParams, testId, config, currentLang]);
 
   if (!config || !result) {
     return (
